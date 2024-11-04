@@ -16,7 +16,10 @@ export default function Layout({ children, open, setOpen }: Props) {
         <div className="bg-secondary/5 h-full">
             <Sidebar open={open} setLink={setLink} />
             <Header open={open} setOpen={setOpen} link={link} />
-            {children}
+            <div className={`w-full mt-[105px] duration-300 ${open ? "md:ml-64 md:max-w-[calc(100%-256px)]" : "md:ml-20 md:max-w-[calc(100%-80px)]"}`}>
+
+                {children}
+            </div>
 
         </div>
     )

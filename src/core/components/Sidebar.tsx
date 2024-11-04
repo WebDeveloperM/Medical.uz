@@ -44,29 +44,25 @@ export default function Sidebar({ open, setLink }: Prop) {
                         </Link>
                     </li>
 
-
-
-                    <li onClick={() => { setActive(2); setLink("Appointments") }} >
-                        <Link to="/finance" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 2 ? "bg-secondary-light" : ""}`}>
+                    <li onClick={() => { setActive(2); setLink("Schedule") }} >
+                        <Link to="/schedule" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 2 ? "bg-secondary-light" : ""}`}>
 
                             <FaRegCalendarAlt className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 2 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                            <span className={`origin-left text-base group-hover:text-secondary  ${active == 2 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 2 ? "text-secondary" : ""}`}>Appointments</span>
+                            <span className={`origin-left text-base group-hover:text-secondary  ${active == 2 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 2 ? "text-secondary" : ""}`}>Schedule</span>
                         </Link>
                     </li>
 
-
-                    <li onClick={() => {
-                        setActive(3)
-                        setLink("Patients")
-                    }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 3 ? "bg-secondary-light" : ""}`}>
-                        <RiEmpathizeLine className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 3 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 3 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 3 ? "text-secondary" : ""}`}>Patients</span>
-                    </li>
+                    <Link to="/doctors" onClick={() =>
+                        setActive(3)}
+                        className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 3 ? "bg-secondary-light" : ""}`}>
+                        <FaUserDoctor  className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 3 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 3 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 3 ? "text-secondary" : ""}`}>Doctors list</span>
+                    </Link>
                     <li onClick={() => {
                         setActive(4)
                         setLink("Doctors")
                     }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 4 ? "bg-secondary-light" : ""}`}>
-                        <FaUserDoctor className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 4 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <RiEmpathizeLine className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 4 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
                         <span className={`origin-left text-base group-hover:text-secondary  ${active == 4 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 4 ? "text-secondary" : ""}`}>Doctors</span>
                     </li>
 
@@ -101,7 +97,7 @@ export default function Sidebar({ open, setLink }: Prop) {
                 </ul>
             </div>
 
-        </div>
+        </div >
 
 
 

@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import UserRoutes from "@users/Routes.tsx"
 import BaseContextProvider from "@core/components/BaseContextProvider.tsx"
 import DashboardRoutes from "./dashboard/Routes"
-import FinanceRoutes from "./finance/Routes"
+import ScheduleRoutes from "./schedule/Routes"
+import DoctorsRoutes from "./doctors/Routes"
 
 
 export default function App() {
@@ -16,7 +17,8 @@ export default function App() {
                     <Routes>
                         <Route path="/*" element={<UserRoutes />} />
                         <Route path="/dashboard/*" element={<DashboardRoutes />} />
-                        <Route path="/finance/*" element={<FinanceRoutes />} />
+                        <Route path="/schedule/*" element={<ScheduleRoutes />} />
+                        <Route path="/doctors/*" element={<DoctorsRoutes />} />
                     </Routes>
 
                 </BrowserRouter>

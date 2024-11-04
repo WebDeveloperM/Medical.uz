@@ -12,11 +12,11 @@ import lungs from "../static/lungs.png";
 import ApexCharts from "@core/components/ApexChart";
 import GroupedBarChart from "@core/components/GroupedBarChart";
 
-export default function Main({ open }: { open: boolean }) {
+export default function Main() {
 
 
     return (
-        <div className={`w-full mt-[105px] duration-300 ${open ? "md:ml-64 md:max-w-[calc(100%-256px)]" : "md:ml-20 md:max-w-[calc(100%-80px)]"}`}>
+        <div>
             <div className="w-full p-5">
 
                 <div className="2xl:grid grid-cols-12 gap-4">
