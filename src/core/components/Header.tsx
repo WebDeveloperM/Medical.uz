@@ -8,6 +8,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import logo from "@core/static/logo.png";
 import { FaBars } from "react-icons/fa6";
 import { Dispatch, SetStateAction } from "react";
+import { useLocation } from "react-router-dom";
 
 
 type Prop = {
@@ -16,7 +17,10 @@ type Prop = {
     link: string
 }
 
-export default function Header({ open, setOpen, link }: Prop) {
+export default function Header({ open, setOpen }: Prop) {
+    const pathname = useLocation();
+    const linkName = pathname.pathname.split("/")[1];
+
     return (
         <div className="fixed top-0 left-0 right-0 z-10">
             <div className="w-full h-[57px] bg-white border-b border-gray-200">
@@ -25,7 +29,7 @@ export default function Header({ open, setOpen, link }: Prop) {
                         <img src={logo} alt="logo" className={`w-[55px] cursor-pointer `} onClick={() => setOpen(!open)} />
                         <h1 className={`text-gray-700 duration-200 font-medium text-xl  origin-left tracking-widest ${open ? "sm:block hidden" : " sm:hidden block "}`}>UzLabs.uz</h1>
                         <h1 className={`text-gray-700 duration-200  font-medium text-xl  ${!open ? "hidden" : "sm:hidden  "} origin-left tracking-widest `}>UzLabs.uz</h1>
-                
+
 
                         <div className={`text-white text-sm font-semi tracking-wider ml-[1%] 2xl:ml-[2%] hidden lg:inline-block 
                             ${open ? "md:max-w-[calc(100%-250px)] 2xl:max-w-[calc(100%-250px)] md:ml-[87px] 2xl:ml-[87px]" : "md:max-w-[calc(100%-70px)] md:ml-[15px]"}`}>
@@ -80,7 +84,7 @@ export default function Header({ open, setOpen, link }: Prop) {
                     <div className={`text-white text-sm font-semi  tracking-wider ml-[1%] 2xl:ml-[2%] ${open ? "md:max-w-[calc(100%-250px)] md:ml-[275px] 2xl:ml-[275px] " : "md:max-w-[calc(100%-70px)] md:ml-[80px] 2xl:ml-[80px]"}`}>
                         <div className='flex items-center gap-2 text-secondary text-base 2xl:text-lg'>
                             <RiHome3Line className="text-secondary text-xl" />
-                            <span> / {link}</span>
+                            <span> / {linkName[0].toUpperCase() + linkName.slice(1)}</span>
                         </div>
                     </div>
 
@@ -97,7 +101,7 @@ export default function Header({ open, setOpen, link }: Prop) {
 
                 </div>
             </div>
-           
+
         </div>
     )
 }

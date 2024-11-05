@@ -7,7 +7,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GoPackageDependents } from "react-icons/go";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 type Prop = {
     open: boolean,
@@ -16,6 +16,8 @@ type Prop = {
 
 export default function Sidebar({ open, setLink }: Prop) {
     const [active, setActive] = useState(0);
+    const { pathname } = useLocation();
+
     return (
 
         <div className={`h-full bg-white fixed top-[57px] z-20 left-0  ${open ? "w-64" : "md:w-20 w-0"}  duration-300 `}>
@@ -36,61 +38,46 @@ export default function Sidebar({ open, setLink }: Prop) {
 
                 <ul className="pt-1 scrollbar-thumb-indigo-50 scrollbar-white h-2/3 overflow-y-scroll">
 
-                    <li onClick={() => { setActive(1); setLink("Dashboard") }} >
-                        <Link to="/dashboard" className={`flex items-center pl-[18px] text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full group ${active == 1 ? "bg-secondary-light" : ""}`}>
-                            <RiHome3Line className={`text-gray-900  overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg 
-                            ${active == 1 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                            <span className={`origin-left text-base group-hover:text-secondary  ${active == 1 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800    ${active == 1 ? "text-secondary" : ""}`}>Dashboard</span>
-                        </Link>
-                    </li>
 
-                    <li onClick={() => { setActive(2); setLink("Schedule") }} >
-                        <Link to="/schedule" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 2 ? "bg-secondary-light" : ""}`}>
+                    {/* <Link className={clsx("nav-btn", { active: pathname === "/dashboard" })} to="/dashboard"> */}
 
-                            <FaRegCalendarAlt className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 2 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                            <span className={`origin-left text-base group-hover:text-secondary  ${active == 2 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 2 ? "text-secondary" : ""}`}>Schedule</span>
-                        </Link>
-                    </li>
-
-                    <Link to="/doctors" onClick={() =>
-                        setActive(3)}
-                        className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 3 ? "bg-secondary-light" : ""}`}>
-                        <FaUserDoctor  className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 3 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 3 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 3 ? "text-secondary" : ""}`}>Doctors list</span>
+                    <Link to="/dashboard" className={`flex items-center pl-[18px] text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full group ${pathname === "/dashboard" ? "bg-secondary-light" : ""}`}>
+                        <RiHome3Line className={`text-gray-900  overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/dashboard" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/dashboard" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Dashboard</span>
                     </Link>
-                    <li onClick={() => {
-                        setActive(4)
-                        setLink("Doctors")
-                    }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 4 ? "bg-secondary-light" : ""}`}>
-                        <RiEmpathizeLine className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 4 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 4 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 4 ? "text-secondary" : ""}`}>Doctors</span>
-                    </li>
 
-                    <li onClick={() => {
-                        setActive(6)
-                        setLink("Finances")
-                    }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 6 ? "bg-secondary-light" : ""}`}>
-                        <GoPackageDependents className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 6 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 6 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 6 ? "text-secondary" : ""}`}>Finances</span>
-                    </li>
+                    <Link to="/patients" className={`flex items-center pl-[18px] mt-0.5 group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/schedule" ? "bg-secondary-light" : ""}`}>
+
+                        <RiEmpathizeLine  className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/patients" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/patients" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Patients</span>
+                    </Link>
+
+                    <Link to="/doctors" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/doctors" ? "bg-secondary-light" : ""}`}>
+                        <FaUserDoctor className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/doctors" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/doctors" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Doctors list</span>
+                    </Link>
+
+                    <Link to="/" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/doctors" ? "bg-secondary-light" : ""}`}>
+                        <FaRegCalendarAlt className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${pathname === "/" ? "text-secondary" : ""}`}>Patients</span>
+                    </Link>
+
+                    <Link to="/" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/finances" ? "bg-secondary-light" : ""}`}>
+                        <GoPackageDependents className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/finances" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/finances" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${pathname === "/finances" ? "text-secondary" : ""}`}>Finances</span>
+                    </Link>
 
                     <hr className="w-[88%] mx-auto my-1" />
 
-                    <li onClick={() => {
-                        setActive(7)
-                        setLink("Settings")
-                    }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 7 ? "bg-secondary-light" : ""}`}>
-                        <IoSettingsOutline className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 7 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 7 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 7 ? "text-secondary" : ""}`}>Settings</span>
-                    </li>
+                    <Link to="/settings" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/settings" ? "bg-secondary-light" : ""}`}>
+                        <IoSettingsOutline className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/settings" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/settings" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${pathname === "/settings" ? "text-secondary" : ""}`}>Settings</span>
+                    </Link>
 
-                    <li onClick={() => {
-                        setActive(8)
-                        setLink("Signout")
-                    }} className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${active == 8 ? "bg-secondary-light" : ""}`}>
-                        <MdLogout className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${active == 8 ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${active == 7 ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${active == 8 ? "text-secondary" : ""}`}>Signout</span>
-                    </li>
+                    <Link to="/" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/signout" ? "bg-secondary-light" : ""}`}>
+                        <MdLogout className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${pathname === "/" ? "text-secondary" : ""}`}>Signout</span>
+                    </Link>
 
 
 

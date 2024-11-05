@@ -6,6 +6,7 @@ import BaseContextProvider from "@core/components/BaseContextProvider.tsx"
 import DashboardRoutes from "./dashboard/Routes"
 import ScheduleRoutes from "./schedule/Routes"
 import DoctorsRoutes from "./doctors/Routes"
+import PatientsRoutes from "./patients/Routes"
 
 
 export default function App() {
@@ -17,8 +18,9 @@ export default function App() {
                     <Routes>
                         <Route path="/*" element={<UserRoutes />} />
                         <Route path="/dashboard/*" element={<DashboardRoutes />} />
-                        <Route path="/schedule/*" element={<ScheduleRoutes />} />
+                        <Route path="/patients/*" element={<PatientsRoutes />} />
                         <Route path="/doctors/*" element={<DoctorsRoutes />} />
+                        <Route path="/schedule/*" element={<ScheduleRoutes />} />
                     </Routes>
 
                 </BrowserRouter>
