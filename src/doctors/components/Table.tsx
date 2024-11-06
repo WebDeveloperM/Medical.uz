@@ -321,16 +321,22 @@ export default function Table() {
             {data?.length >= recordsPerPage ? <nav aria-label="Page navigation example" className=' pt-5'>
                 <ul className="inline-flex -space-x-px text-base h-10 ">
                     <li>
-                        <a onClick={prePage} href="#" className="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 "><GrFormPrevious /></a>
+                        <a onClick={prePage} href="#" className="flex items-center justify-center px-4 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
+                            {/* <GrFormPrevious /> */}
+                            Previous
+                        </a>
                     </li>
                     {numbers.map((n, i) => (
                         <li key={i}>
-                            <a href="#" onClick={() => changeCPage(n)} className={` ${currentPage == n ? "text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700" : "bg-white text-gray-500"} flex items-center justify-center px-4 h-10 leading-tight   border border-gray-300 hover:bg-gray-100 hover:text-gray-700 `}>{n}</a>
+                            <a href="#" onClick={() => changeCPage(n)} className={` ${currentPage == n ? "text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700" : "bg-white text-gray-500"} flex items-center justify-center px-4 h-8 leading-tight   border border-gray-300 hover:bg-gray-100 hover:text-gray-700 `}>{n}</a>
                         </li>
                     ))}
 
                     <li>
-                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><MdNavigateNext /></a>
+                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            {/* <MdNavigateNext /> */}
+                            Next
+                        </a>
                     </li>
 
                 </ul>
@@ -338,58 +344,6 @@ export default function Table() {
 
 
 
-            {/* <br />
-            <nav className="my-5 flex items-center justify-between text-sm" aria-label="Page navigation example">
-                <p>
-
-                </p>
-
-                <ul className="list-style-none flex">
-                    <li>
-                        <a
-                            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            href="#!"
-                        >
-                            Previous
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            href="#!"
-                        >
-                            1
-                        </a>
-                    </li>
-                    <li aria-current="page">
-                        <a
-                            className="relative block rounded bg-blue-100 px-3 py-1.5 text-sm font-medium text-blue-700 transition-all duration-300"
-                            href="#!"
-                        >
-                            2
-                            <span className="absolute -m-px h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 [clip:rect(0,0,0,0)]">
-                                (current)
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            href="#!"
-                        >
-                            3
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            href="#!"
-                        >
-                            Next
-                        </a>
-                    </li>
-                </ul>
-            </nav> */}
         </div>
     )
 }
