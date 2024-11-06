@@ -46,18 +46,21 @@ export default function Sidebar({ open, setLink }: Prop) {
                         <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/dashboard" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Управление</span>
                     </Link>
 
-                    <Link to="/patients" className={`flex items-center pl-[18px] mt-0.5 group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/patients" ? "bg-secondary-light" : ""}`}>
-
-                        <RiEmpathizeLine  className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/patients" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
-                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/patients" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Пациенты</span>
-                    </Link>
-
                     <Link to="/doctors" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/doctors" ? "bg-secondary-light" : ""}`}>
                         <FaUserDoctor className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/doctors" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
                         <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/doctors" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Кабинет доктора</span>
                     </Link>
 
-                    <Link to="/" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/doctors" ? "bg-secondary-light" : ""}`}>
+
+                    <Link to="/patients" className={`flex items-center pl-[18px] mt-0.5 group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/patients" ? "bg-secondary-light" : ""}`}>
+
+                        <RiEmpathizeLine className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/patients" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
+                        <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/patients" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800`}>Пациенты</span>
+                    </Link>
+
+
+
+                    <Link to="/" className={`flex items-center pl-[18px] mt-0.5  group text-secondary text-sm gap-x-4 cursor-pointer px-2 py-1.5 hover:bg-secondary/10 rounded-r-full ${pathname === "/" ? "bg-secondary-light" : ""}`}>
                         <FaRegCalendarAlt className={`text-gray-900 overflow-clip cursor-pointer w-[35px] h-[35px] p-2 rounded-lg ${pathname === "/" ? "bg-secondary text-white group-hover:bg-secondary group-hover:text-white" : "bg-secondary-light text-gray-900 group-hover:bg-white group-hover:text-secondary "}`} />
                         <span className={`origin-left text-base group-hover:text-secondary  ${pathname === "/" ? "text-secondary" : ""} duration-200 ${!open ? "scale-0" : ""} text-gray-800  ${pathname === "/" ? "text-secondary" : ""}`}>Patients</span>
                     </Link>
