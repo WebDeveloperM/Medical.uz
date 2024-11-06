@@ -7,8 +7,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { BiSolidEdit } from "react-icons/bi";
 import { LuEye } from "react-icons/lu";
 import { useState } from "react";
-import { GrFormPrevious } from "react-icons/gr";
-import { MdNavigateNext } from "react-icons/md";
+
 
 
 export default function Table() {
@@ -224,59 +223,59 @@ export default function Table() {
         <div className=' 2xl:p-5 px-3 overflow-x-auto' >
             <table className="table-md  min-w-full text-left  whitespace-nowrap rounded-md  overflow-x-auto " >
 
-                <thead className="tracking-wider sticky top-0  bg-secondary  rounded-md text-white dark:bg-neutral-800 ">
+                <thead className="tracking-wider sticky top-0  bg-secondary  rounded-md text-white ">
                     <tr>
-                        <th scope="col" className=" px-3 py-2 font-semibold  dark:border-neutral-600 w-[30px] ">
+                        <th scope="col" className=" px-3 py-2 font-semibold   w-[30px] ">
                             №
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600 w-[60px] ">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold  w-[60px] ">
                             ID
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600  w-[300px]">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold   w-[300px]">
                             Doctor Name
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Designation
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Date of Birth
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Phone
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
 
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Actions
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
@@ -289,20 +288,20 @@ export default function Table() {
 
                 <tbody className="scrollbar h-2/3 overflow-y-scroll">
                     {records.map((item) => (
-                        <tr key={item.id} className="border-b  dark:border-neutral-600 border-l hover:bg-neutral-100 dark:hover:bg-neutral-600">
-                            <th scope="row" className="2xl:px-5 px-3 py-1.5  dark:border-neutral-600">
+                        <tr key={item.id} className="border-b   border-l hover:bg-neutral-100 ">
+                            <th scope="row" className="2xl:px-5 px-3 py-1.5  ">
                                 {item.id}
                             </th>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">#{item.patientId}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 flex items-center gap-2">
+                            <td className="2xl:px-5 px-3 py-1.5 ">#{item.patientId}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  flex items-center gap-2">
                                 <img src={item.image} alt="" className="w-10 h-10 rounded-full" />
                                 {item.fio}
 
                             </td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">{item.date}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">{item.designation}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 ">{item.phone}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 border-r">
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.date}</td>
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.designation}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  ">{item.phone}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  border-r">
                                 <div className="flex items-center gap-6 justify-center float-left text-base">
                                     <FaRegTrashAlt className="text-red-500 cursor-pointer" />
                                     <BiSolidEdit className="text-blue-500 cursor-pointer" />
@@ -335,7 +334,7 @@ export default function Table() {
                     ))}
 
                     <li>
-                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">
                             {/* <MdNavigateNext /> */}
                             Next
                         </a>

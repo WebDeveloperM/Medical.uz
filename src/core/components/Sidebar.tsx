@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction, useState } from "react";
 import doctor3 from "../../dashboard/static/doctor3.png";
 import { RiHome3Line } from "react-icons/ri";
 import { RiEmpathizeLine } from "react-icons/ri";
@@ -8,15 +7,23 @@ import { MdLogout } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GoPackageDependents } from "react-icons/go";
 import { Link, useLocation } from "react-router-dom";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type Prop = {
     open: boolean,
-    setLink: Dispatch<SetStateAction<string>>
+    setOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export default function Sidebar({ open, setLink }: Prop) {
-    const [active, setActive] = useState(0);
+export default function Sidebar({ open, setOpen }: Prop) {
     const { pathname } = useLocation();
+    const [screenSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+
+    useEffect(() => {
+        screenSize.width < 768 && setOpen(false)
+    }, [])
 
     return (
 
@@ -24,8 +31,6 @@ export default function Sidebar({ open, setLink }: Prop) {
 
 
             <div className="h-full relative shadow">
-                {/* <CircleArrowLeft className={`absolute top-3.5 w-7 text-secondary -right-3  cursor-pointer ${!open ? "hidden" : "inline-block"}`} onClick={() => setOpen(!open)} /> */}
-
 
                 <div className="flex justify-center gap-2 border-b border-gray-200 pb-2 pt-1 min-h-[132px]">
                     <div className={`text-center flex flex-col items-center ${open ? "scale-100 sm:scale-100" : "scale-0 sm:scale-100"} duration-200`}>

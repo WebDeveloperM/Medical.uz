@@ -11,10 +11,10 @@ type Props = {
 
 
 export default function Layout({ children, open, setOpen }: Props) {
-    const [link, setLink] = useState<string>("Dashboard")
+    const [link] = useState<string>("Dashboard")
     return (
         <div className="h-full">
-            <Sidebar open={open} setLink={setLink} />
+            <Sidebar open={open} setOpen={setOpen} />
             <Header open={open} setOpen={setOpen} link={link} />
             <div className={`w-full mt-[105px] pt-0.5 duration-300  ${open ? "md:ml-64 md:max-w-[calc(100%-256px)]" : "md:ml-20 md:max-w-[calc(100%-80px)]"}`}>
                 {children}

@@ -7,11 +7,12 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { BiSolidEdit } from "react-icons/bi";
 import { LuEye } from "react-icons/lu";
 import { useState } from "react";
-import { GrFormPrevious } from "react-icons/gr";
-import { MdNavigateNext } from "react-icons/md";
 
+type Props = {
+    search: string,
+}
 
-export default function Table() {
+export default function Table({ search }: Props) {
 
 
 
@@ -29,7 +30,7 @@ export default function Table() {
         {
             id: 2,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Jonibekov Shavkat",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -39,7 +40,7 @@ export default function Table() {
         {
             id: 3,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Qodirov Oybek",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -48,7 +49,7 @@ export default function Table() {
         {
             id: 4,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Eshbulatov Ulukbek",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -57,7 +58,7 @@ export default function Table() {
         {
             id: 5,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Tursunov Yusuf",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -67,7 +68,7 @@ export default function Table() {
         {
             id: 6,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Umidov Karim",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -76,7 +77,7 @@ export default function Table() {
         {
             id: 7,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Otajonov Otabek",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -86,7 +87,7 @@ export default function Table() {
         {
             id: 8,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Ilxomov Rahim",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -95,7 +96,7 @@ export default function Table() {
         {
             id: 9,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Qudratov Ergash",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -105,7 +106,7 @@ export default function Table() {
         {
             id: 10,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Shabonov Ma'ruf",
             date: "16.04.1965",
             designation: "Therapist",
             phone: "+998907150560",
@@ -186,100 +187,57 @@ export default function Table() {
     }
 
     return (
-        // <div className='overflow-x-auto 2xl:p-5 p-3'>
-        //     <table className='w-full rounded-md' >
-        //         <tr className="bg-secondary text-white"  >
-        //             <td className='px-3'>№</td>
-        //             <td className='px-3'>Doctor Name</td>
-        //             <td className='px-3'>Designation</td>
-        //             <td className='px-3'>Phone</td>
-        //             <td className='px-3'>Actions</td>
-        //         </tr>
 
 
+        <div className=' 2xl:p-5 px-3 ' >
+            <table className="table-md  min-w-full text-left  whitespace-nowrap rounded-md  scrollbar h-2/3 overflow-y-scroll " >
 
-        //         <tbody className='w-full'>
-
-        //             <tr>
-        //                 <td>1</td>
-        //                 <td>Эшпулатов Улугбек</td>
-        //                 <td>Педиатр</td>
-        //                 <td>+998907150560</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>2</td>
-        //                 <td>Эшпулатов Улугбек</td>
-        //                 <td>Педиатр</td>
-        //                 <td>+998907150560</td>
-        //             </tr>
-
-        //         </tbody>
-        //     </table>
-
-        // </div>
-
-
-
-
-        <div className=' 2xl:p-5 px-3 overflow-x-auto' >
-            <table className="table-md  min-w-full text-left  whitespace-nowrap rounded-md  overflow-x-auto " >
-
-                <thead className="tracking-wider sticky top-0  bg-secondary  rounded-md text-white dark:bg-neutral-800 ">
+                <thead className="tracking-wider sticky top-0  bg-secondary  rounded-md text-white  ">
                     <tr>
-                        <th scope="col" className=" px-3 py-2 font-semibold  dark:border-neutral-600 w-[30px] ">
+                        <th scope="col" className=" px-3 py-2 font-semibold   w-[30px] ">
                             №
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600 w-[60px] ">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold  w-[60px] ">
                             ID
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600  w-[300px]">
+                        <th scope="col" className="2xl:px-6 px-3 py-2   font-semibold  min-w-[60px] ">
                             Doctor Name
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
-
+                                <img src={tableIcon} alt="" className="lg:min-w-[0.65rem] min-w-[100px] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Designation
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Date of Birth
                             <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Phone
-                            <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
-
-                            </a>
-
                         </th>
 
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold dark:border-neutral-600">
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Actions
-                            <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500 dark:text-neutral-200 mb-[1px]" />
-
-                            </a>
-
                         </th>
 
                     </tr>
@@ -287,22 +245,24 @@ export default function Table() {
 
                 </thead>
 
-                <tbody className="scrollbar h-2/3 overflow-y-scroll">
-                    {records.map((item) => (
-                        <tr key={item.id} className="border-b  dark:border-neutral-600 border-l hover:bg-neutral-100 dark:hover:bg-neutral-600">
-                            <th scope="row" className="2xl:px-5 px-3 py-1.5  dark:border-neutral-600">
+                <tbody className="">
+                    {records.filter((item) => {
+                        return search.toLowerCase() === '' ? item : `${item.fio}`.toLowerCase().includes(search)
+                    }).map((item) => (
+                        <tr key={item.id} className="border-b   border-l hover:bg-neutral-100 ">
+                            <th scope="row" className="2xl:px-5 px-3 py-1.5  ">
                                 {item.id}
                             </th>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">#{item.patientId}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 flex items-center gap-2">
+                            <td className="2xl:px-5 px-3 py-1.5 ">#{item.patientId}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  flex items-center gap-2">
                                 <img src={item.image} alt="" className="w-10 h-10 rounded-full" />
                                 {item.fio}
 
                             </td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">{item.date}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600">{item.designation}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 ">{item.phone}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 dark:border-neutral-600 border-r">
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.date}</td>
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.designation}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  ">{item.phone}</td>
+                            <td className="2xl:px-5 px-3 py-1.5  border-r">
                                 <div className="flex items-center gap-6 justify-center float-left text-base">
                                     <FaRegTrashAlt className="text-red-500 cursor-pointer" />
                                     <BiSolidEdit className="text-blue-500 cursor-pointer" />
@@ -333,7 +293,7 @@ export default function Table() {
                     ))}
 
                     <li>
-                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">
                             {/* <MdNavigateNext /> */}
                             Next
                         </a>
