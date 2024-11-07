@@ -1,169 +1,183 @@
-import doctor from "@doctors/static/doctor.png";
-import doctor1 from "@doctors/static/doctor1.png";
-import doctor2 from "@doctors/static/doctor2.png";
-import doctor3 from "@doctors/static/doctor3.png";
+
 import tableIcon from "@doctors/static/tableIcon.svg";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { BiSolidEdit } from "react-icons/bi";
 import { LuEye } from "react-icons/lu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { data } from "@core/utils/data";
 
 type Props = {
     search: string,
 }
 
 export default function Table({ search }: Props) {
+    const [recordsPerPage, setRecordsPerPage] = useState(10);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1536) {
+                setRecordsPerPage(10);
+            } else {
+                setRecordsPerPage(5);
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
 
 
-    const data = [
-        {
-            id: 1,
-            patientId: 213,
-            fio: "Yusupov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor
+    // const data = [
+    //     {
+    //         id: 1,
+    //         patientId: 213,
+    //         fio: "Yusupov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor
 
-        },
-        {
-            id: 2,
-            patientId: 213,
-            fio: "Jonibekov Shavkat",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor1
+    //     },
+    //     {
+    //         id: 2,
+    //         patientId: 213,
+    //         fio: "Jonibekov Shavkat",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor1
 
-        },
-        {
-            id: 3,
-            patientId: 213,
-            fio: "Qodirov Oybek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
-        },
-        {
-            id: 4,
-            patientId: 213,
-            fio: "Eshbulatov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 5,
-            patientId: 213,
-            fio: "Tursunov Yusuf",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
+    //     },
+    //     {
+    //         id: 3,
+    //         patientId: 213,
+    //         fio: "Qodirov Oybek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
+    //     },
+    //     {
+    //         id: 4,
+    //         patientId: 213,
+    //         fio: "Eshbulatov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 5,
+    //         patientId: 213,
+    //         fio: "Tursunov Yusuf",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
 
-        },
-        {
-            id: 6,
-            patientId: 213,
-            fio: "Umidov Karim",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 7,
-            patientId: 213,
-            fio: "Otajonov Otabek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
+    //     },
+    //     {
+    //         id: 6,
+    //         patientId: 213,
+    //         fio: "Umidov Karim",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 7,
+    //         patientId: 213,
+    //         fio: "Otajonov Otabek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
 
-        },
-        {
-            id: 8,
-            patientId: 213,
-            fio: "Ilxomov Rahim",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 9,
-            patientId: 213,
-            fio: "Qudratov Ergash",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
+    //     },
+    //     {
+    //         id: 8,
+    //         patientId: 213,
+    //         fio: "Ilxomov Rahim",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 9,
+    //         patientId: 213,
+    //         fio: "Qudratov Ergash",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
 
-        },
-        {
-            id: 10,
-            patientId: 213,
-            fio: "Shabonov Ma'ruf",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 11,
-            patientId: 213,
-            fio: "Yusupov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
+    //     },
+    //     {
+    //         id: 10,
+    //         patientId: 213,
+    //         fio: "Shabonov Ma'ruf",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 11,
+    //         patientId: 213,
+    //         fio: "Yusupov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
 
-        },
-        {
-            id: 12,
-            patientId: 213,
-            fio: "Yusupov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 13,
-            patientId: 213,
-            fio: "Yusupov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor2
+    //     },
+    //     {
+    //         id: 12,
+    //         patientId: 213,
+    //         fio: "Yusupov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 13,
+    //         patientId: 213,
+    //         fio: "Yusupov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor2
 
-        },
-        {
-            id: 14,
-            patientId: 213,
-            fio: "Yusupov Ulukbek",
-            date: "16.04.1965",
-            designation: "Therapist",
-            phone: "+998907150560",
-            image: doctor3
-        },
-        {
-            id: 15,
-            patientId: 214,
-            fio: "Ergashev Shavkat",
-            date: "24.11.1968",
-            designation: "Pediatrics",
-            phone: "+998907150560",
-            image: doctor1
-        }
-    ]
+    //     },
+    //     {
+    //         id: 14,
+    //         patientId: 213,
+    //         fio: "Yusupov Ulukbek",
+    //         date: "16.04.1965",
+    //         designation: "Therapist",
+    //         phone: "+998907150560",
+    //         image: doctor3
+    //     },
+    //     {
+    //         id: 15,
+    //         patientId: 214,
+    //         fio: "Ergashev Shavkat",
+    //         date: "24.11.1968",
+    //         designation: "Pediatrics",
+    //         phone: "+998907150560",
+    //         image: doctor1
+    //     }
+    // ]
 
     // For pagination
     const [currentPage, setCurrentPage] = useState(1)
-    const recordsPerPage = 5
+
     const lastIndex = currentPage * recordsPerPage
     const firstIndex = lastIndex - recordsPerPage
     const records = data?.slice(firstIndex, lastIndex)
@@ -187,7 +201,6 @@ export default function Table({ search }: Props) {
     }
 
     return (
-
 
         <div className=' 2xl:p-5 px-3 ' >
             <table className="table-md  min-w-full text-left  whitespace-nowrap rounded-md  scrollbar h-2/3 overflow-y-scroll " >
@@ -282,7 +295,7 @@ export default function Table({ search }: Props) {
                 <ul className="inline-flex -space-x-px text-base h-10 ">
                     <li>
                         <a onClick={prePage} href="#" className="flex items-center justify-center px-4 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
-                            {/* <GrFormPrevious /> */}
+
                             Previous
                         </a>
                     </li>
@@ -294,15 +307,13 @@ export default function Table({ search }: Props) {
 
                     <li>
                         <a onClick={nextPage} href="#" className="flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">
-                            {/* <MdNavigateNext /> */}
+
                             Next
                         </a>
                     </li>
 
                 </ul>
             </nav> : ""}
-
-
 
         </div>
     )
