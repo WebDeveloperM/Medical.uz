@@ -14,5 +14,6 @@ export default defineConfig({
             "@users": `${path.resolve(__dirname, "./src/users/")}`,
             "@appointments": `${path.resolve(__dirname, "./src/appointments/")}`,
 
+        },
     },
 })

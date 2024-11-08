@@ -9,7 +9,5 @@ export default function AppointmentsRoutes() {
         <Routes>
             <Route path="/" element={<Appointments />} />
         </Routes>
-
-
     )
 }
