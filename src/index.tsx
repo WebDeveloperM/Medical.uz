@@ -7,6 +7,7 @@ import DashboardRoutes from "./dashboard/Routes"
 import DoctorsRoutes from "./doctors/Routes"
 import PatientsRoutes from "./patients/Routes"
 import AppointmentsRoutes from "./appointments/Routes"
+import NotFound from "@core/pages/NotFound"
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
                         <Route path="/patients/*" element={<PatientsRoutes />} />
                         <Route path="/doctors/*" element={<DoctorsRoutes />} />
                         <Route path="/appointments/*" element={<AppointmentsRoutes />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
 
                 </BrowserRouter>

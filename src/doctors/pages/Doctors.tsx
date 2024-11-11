@@ -1,6 +1,7 @@
 import Layout from "@core/components/Layout";
 import { useState } from "react";
 import Table from "../components/Table";
+import { Link } from "react-router-dom";
 
 export default function Doctors() {
     const [open, setOpen] = useState(true);
@@ -14,7 +15,9 @@ export default function Doctors() {
                 <div className="overflow-x-auto bg-white rounded-md text-gray-700  h-full pb-5 overflow-y-scroll 2xl:m-5 m-3 ">
                     <div className="flex items-center justify-between px-3 2xl:px-5 pt-3">
                         <h4 className="text-lg font-semibold">Doctors List</h4>
-                        <button className="bg-secondary text-white px-3 py-1 rounded-md">Add Doctor</button>
+                        <Link to="/doctors/add-doctors" className="bg-secondary text-white px-3 py-1 rounded-md" >
+                            Add Doctor
+                        </Link>
                     </div>
 
                     {/* <button className="bg-secondary/10  text-secondary px-3 py-1 2xl:mx-5 mx-3 my-2 rounded-md flex items-center gap-1" onClick={() => setFilter(!filter)}>

@@ -29,8 +29,6 @@ export default function Table({ search }: Props) {
     }, []);
 
 
-
-    // const data = [
     //     {
     //         id: 1,
     //         patientId: 213,
@@ -272,8 +270,8 @@ export default function Table({ search }: Props) {
                                 {item.fio}
 
                             </td>
-                            <td className="2xl:px-5 px-3 py-1.5 ">{item.date}</td>
                             <td className="2xl:px-5 px-3 py-1.5 ">{item.designation}</td>
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.date}</td>
                             <td className="2xl:px-5 px-3 py-1.5  ">{item.phone}</td>
                             <td className="2xl:px-5 px-3 py-1.5  border-r">
                                 <div className="flex items-center gap-6 justify-center float-left text-base">

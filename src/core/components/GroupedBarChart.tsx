@@ -4,6 +4,7 @@ import ReactApexChart from "react-apexcharts";
 
 
 export default function GroupedBarChart() {
+
     const [data] = useState(
         {
 

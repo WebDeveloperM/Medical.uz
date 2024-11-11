@@ -1,11 +1,9 @@
-import doctor from "@doctors/static/doctor.png";
-import doctor1 from "@doctors/static/doctor1.png";
-import doctor2 from "@doctors/static/doctor2.png";
-import doctor3 from "@doctors/static/doctor3.png";
+import patient from "@patients/static/patient.png";
+import patient1 from "@patients/static/patient5.png";
+import patient2 from "@patients/static/patient.png";
+import patient3 from "@patients/static/patient5.png";
 import tableIcon from "@doctors/static/tableIcon.svg";
-import { FaRegTrashAlt } from "react-icons/fa";
-import { BiSolidEdit } from "react-icons/bi";
-import { LuEye } from "react-icons/lu";
+
 import { useState } from "react";
 
 
@@ -20,9 +18,9 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor
+            image: patient
 
         },
         {
@@ -30,9 +28,9 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor1
+            image: patient1
 
         },
         {
@@ -40,27 +38,27 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
         },
         {
             id: 4,
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 5,
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
 
         },
         {
@@ -68,18 +66,18 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 7,
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
 
         },
         {
@@ -87,18 +85,18 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 9,
             patientId: 213,
-            fio: "Yusupov Ulukbek",
+            fio: "Kamolova Nodira",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Female",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
 
         },
         {
@@ -106,18 +104,18 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Female",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 11,
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
 
         },
         {
@@ -125,18 +123,18 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 13,
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor2
+            image: patient2
 
         },
         {
@@ -144,18 +142,18 @@ export default function Table() {
             patientId: 213,
             fio: "Yusupov Ulukbek",
             date: "16.04.1965",
-            designation: "Therapist",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor3
+            image: patient3
         },
         {
             id: 15,
             patientId: 214,
             fio: "Ergashev Shavkat",
             date: "24.11.1968",
-            designation: "Pediatrics",
+            gender: "Male",
             phone: "+998907150560",
-            image: doctor1
+            image: patient1
         }
     ]
 
@@ -185,39 +183,7 @@ export default function Table() {
     }
 
     return (
-        // <div className='overflow-x-auto 2xl:p-5 p-3'>
-        //     <table className='w-full rounded-md' >
-        //         <tr className="bg-secondary text-white"  >
-        //             <td className='px-3'>№</td>
-        //             <td className='px-3'>Doctor Name</td>
-        //             <td className='px-3'>Designation</td>
-        //             <td className='px-3'>Phone</td>
-        //             <td className='px-3'>Actions</td>
-        //         </tr>
-
-
-
-        //         <tbody className='w-full'>
-
-        //             <tr>
-        //                 <td>1</td>
-        //                 <td>Эшпулатов Улугбек</td>
-        //                 <td>Педиатр</td>
-        //                 <td>+998907150560</td>
-        //             </tr>
-        //             <tr>
-        //                 <td>2</td>
-        //                 <td>Эшпулатов Улугбек</td>
-        //                 <td>Педиатр</td>
-        //                 <td>+998907150560</td>
-        //             </tr>
-
-        //         </tbody>
-        //     </table>
-
-        // </div>
-
-
+      
 
 
         <div className=' 2xl:p-5 px-3 overflow-x-auto' >
@@ -239,16 +205,8 @@ export default function Table() {
                             </a>
 
                         </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold   w-[300px]">
-                            Doctor Name
-                            <a href="" className="inline">
-                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
-
-                            </a>
-
-                        </th>
-                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
-                            Designation
+                        <th scope="col" className="2xl:px-6 px-3 py-2   font-semibold  min-w-[200px]">
+                            Patient Name
                             <a href="" className="inline">
                                 <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
@@ -257,6 +215,14 @@ export default function Table() {
                         </th>
                         <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
                             Date of Birth
+                            <a href="" className="inline">
+                                <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
+
+                            </a>
+
+                        </th>
+                        <th scope="col" className="2xl:px-6 px-3 py-2  font-semibold ">
+                            Gender
                             <a href="" className="inline">
                                 <img src={tableIcon} alt="" className="w-[0.65rem] h-[0.65rem] inline ml-1 text-neutral-500  mb-[1px]" />
 
@@ -299,13 +265,13 @@ export default function Table() {
 
                             </td>
                             <td className="2xl:px-5 px-3 py-1.5 ">{item.date}</td>
-                            <td className="2xl:px-5 px-3 py-1.5 ">{item.designation}</td>
+                            <td className="2xl:px-5 px-3 py-1.5 ">{item.gender}</td>
                             <td className="2xl:px-5 px-3 py-1.5  ">{item.phone}</td>
                             <td className="2xl:px-5 px-3 py-1.5  border-r">
                                 <div className="flex items-center gap-6 justify-center float-left text-base">
-                                    <FaRegTrashAlt className="text-red-500 cursor-pointer" />
-                                    <BiSolidEdit className="text-blue-500 cursor-pointer" />
-                                    <LuEye className="text-green-500 cursor-pointer" />
+
+                                    <button className="text-sm text-secondary bg-secondary-light rounded-2xl py-1.5 px-3 font-semibold">Details</button>
+
                                 </div>
                             </td>
                         </tr>

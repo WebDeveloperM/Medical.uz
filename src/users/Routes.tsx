@@ -6,7 +6,7 @@ export default function UserRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register/*" element={<Register />} />
         </Routes>
     )
 }
