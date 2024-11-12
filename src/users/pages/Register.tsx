@@ -5,74 +5,73 @@ import { Link } from "react-router-dom"
 
 
 export default function Register() {
-    const [showPassword, setShowPassword] = useState(false)
-    const [showPasswordConfirm, setShowPasswordConfirm] = useState(false)
+    // const [showPassword, setShowPassword] = useState(false)
+    // const [showPasswordConfirm, setShowPasswordConfirm] = useState(false)
     const [pseria, setPSeria] = useState("")
     const inputRef = useMask({ mask: "______________", replacement: { _: /\d/ } })
-    const inputRefPS = useMask({ mask: "AA | _______", replacement: { A: /[A-Za-z]/, _: /\d/ } })
+    const inputRefPS = useMask({ mask: "11 | _______", replacement: { 1: /[A-Za-z]/, _: /\d/ } })
 
-    setTimeout(() => { setShowPassword(false) }, 4000)
-    setTimeout(() => { setShowPasswordConfirm(false) }, 4000)
+    // setTimeout(() => { setShowPassword(false) }, 4000)
+    // setTimeout(() => { setShowPasswordConfirm(false) }, 4000)
 
     return (
         <div className="bg-[url('/src/users/static/login-bg.svg')] sm:h-screen min-h-[800px] sm:min-h-0 w-full bg-cover sm:bg-bottom relative  sm:py-0">
 
             <div className="border-[0.7px] border-secondary rounded-lg bg-white sm:bg-white/70 pt-[2%]
-                            max-w-[90%] min-w-[85%] mx-auto sm:max-w-[50%] sm:min-w-[45%] md:max-w-[40%] md:min-w-[35%] xl:min-w-[30%] absolute top-1/2 left-1/2 -translate-x-1/2 sm:-translate-y-1/2 -translate-y-1/2 md:top-1/2 md:left-[70%] xl:left-[75%] ">
+                            max-w-[90%] min-w-[85%] mx-auto sm:max-w-[50%] sm:min-w-[45%] md:max-w-[40%] md:min-w-[35%] xl:min-w-[25%] absolute top-1/2 left-1/2 -translate-x-1/2 sm:-translate-y-1/2 -translate-y-1/2 md:top-1/2 md:left-[70%] xl:left-[75%] ">
                 <div className="">
                     <img src={logo} alt="logo" className="w-[20%] xl:w-1/5 2xl:w-1/4 mx-auto mt-5 sm:mt-0" />
                     <div className="px-7 ">
 
                         <h5 className="text-xl font-medium text-gray-700 py-3 whitespace-normal tracking-wider text-center">Ro'yhatdan o'tish</h5>
                         <form action="" className="mb-7">
-                            <div className="lg:flex justify-center gap-3">
-                                <div className="w-full">
-                                    <label htmlFor="" className=" text-gray-700">Ism</label> <span className="text-red-500">*</span>
 
-                                    <p className="input input-bordered flex items-center gap-2 input-sm my-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
-                                        <input type="text" className="grow" placeholder="Ism kiriting" />
-                                    </p>
-                                </div>
+                            <div className="w-full">
+                                <label htmlFor="" className=" text-gray-700">Ism</label> <span className="text-red-500">*</span>
 
-
-                                <div className="w-full">
-                                    <label htmlFor="" className=" text-gray-700">Familiya</label> <span className="text-red-500">*</span>
-
-                                    <p className="input input-bordered flex items-center gap-2 input-sm my-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
-                                        <input type="text" className="grow" placeholder="Familiya kiriting" />
-                                    </p>
-                                </div>
+                                <p className="input input-bordered flex items-center gap-2 input-sm my-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
+                                    <input type="text" className="grow" placeholder="Ism kiriting" />
+                                </p>
                             </div>
 
+
+                            <div className="w-full">
+                                <label htmlFor="" className=" text-gray-700">Familiya</label> <span className="text-red-500">*</span>
+
+                                <p className="input input-bordered flex items-center gap-2 input-sm my-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
+                                    <input type="text" className="grow" placeholder="Familiya kiriting" />
+                                </p>
+                            </div>
+
+
                             <div>
-                                <div className="lg:flex justify-between gap-3 items-center ">
-                                    <div className="w-full">
-                                        <label htmlFor="" className=" text-gray-700">JSHSHIR</label> <span className="text-red-500 inline-block">*</span>
 
-                                        <p className="input input-bordered flex items-center gap-2 input-sm my-1 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
-                                            <input type="text" className="grow" placeholder="00000000000000"
-                                                ref={(e) => {
-                                                    // formInputRef(e)
-                                                    inputRef.current = e
-                                                }} />
-                                        </p>
-                                    </div>
-                                    <div className="w-full">
-                                        <label htmlFor="" className=" text-gray-700">Passport seria va raqami</label> <span className="text-red-500 inline-block">*</span>
+                                <div className="w-full">
+                                    <label htmlFor="" className=" text-gray-700">JSHSHIR</label> <span className="text-red-500 inline-block">*</span>
 
-                                        <p className="input input-bordered flex items-center gap-2 input-sm my-1 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
-                                            <input type="text" className="grow" placeholder="AB | 1234567" value={pseria.toString().toUpperCase()}
-                                                ref={(e) => {
-                                                    // formInputRef(e)
-                                                    inputRefPS.current = e
-                                                }}
-                                                onChange={(e) => setPSeria(e.target.value)}
-                                            />
-
-                                        </p>
-                                    </div>
+                                    <p className="input input-bordered flex items-center gap-2 input-sm my-1 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
+                                        <input type="text" className="grow" placeholder="00000000000000"
+                                            ref={(e) => {
+                                                // formInputRef(e)
+                                                inputRef.current = e
+                                            }} />
+                                    </p>
                                 </div>
-                                <div >
+                                <div className="w-full">
+                                    <label htmlFor="" className=" text-gray-700">Passport seria va raqami</label> <span className="text-red-500 inline-block">*</span>
+
+                                    <p className="input input-bordered flex items-center gap-2 input-sm my-1 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
+                                        <input type="text" className="grow" placeholder="AB | 1234567" value={pseria.toString().toUpperCase()}
+                                            ref={(e) => {
+                                                // formInputRef(e)
+                                                inputRefPS.current = e
+                                            }}
+                                            onChange={(e) => setPSeria(e.target.value)}
+                                        />
+                                    </p>
+                                </div>
+
+                                {/* <div >
                                     <label htmlFor="" className=" text-gray-700 ">Login</label> <span className="text-red-500">*</span>
 
                                     <label className="input input-bordered flex items-center gap-2 input-sm mt-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
@@ -124,7 +123,7 @@ export default function Register() {
                                             </svg>
                                         </label>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AndroidOutlined, AppleOutlined } from '@ant-design/icons';
 import { Tabs } from 'antd';
+import NavbarTabItem from './NavbarTabItem';
 
 
 const App: React.FC = () => (
@@ -11,7 +12,7 @@ const App: React.FC = () => (
             return {
                 key: id,
                 label: `Tab ${id}`,
-                children: `Tab map ${id}`,
+                children: <NavbarTabItem data={"Hello guys"} />,
                 icon: <Icon />,
             };
         })}
