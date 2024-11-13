@@ -1,8 +1,14 @@
 import { ModelType } from "@core/types.ts"
 
 export type BaseUserType = ModelType & {
-    email: string
     firstName: string
     lastName: string
-    avatar?: string
 }
+
+export type SignUpFormDataForSuperUSer = BaseUserType & {
+    clinicName: string,
+    personalNumber: number
+    personSerNum: string
+}
+
+

@@ -4,13 +4,13 @@ import { Link } from "react-router-dom"
 
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false)
-
+    
 
     return (
         <div className="bg-[url('/src/users/static/login-bg.svg')] h-screen w-full bg-cover sm:bg-bottom relative">
 
             <div className="border-[0.7px] border-secondary rounded-lg p-2 bg-white sm:bg-white/70 pt-[2%] 
-                            max-w-[90%] min-w-[85%] mx-auto sm:max-w-[50%] sm:min-w-[45%] md:max-w-[40%] md:min-w-[35%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-[70%] xl:left-[75%] xl:max-w-[30%] xl:min-w-[25%]">
+                            max-w-[90%] min-w-[85%] mx-auto sm:max-w-[50%] sm:min-w-[40%] md:max-w-[35%] md:min-w-[25%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-[70%] xl:left-[75%] xl:max-w-[25%] xl:min-w-[20%]">
                 <div className="">
                     <img src={logo} alt="logo" className="w-1/4 mx-auto mt-5 sm:mt-0" />
                     <div className="px-2 lg:px-3 xl:px-4">
@@ -21,7 +21,7 @@ export default function Login() {
                                 <label htmlFor="" className=" text-gray-700">Login</label> <span className="text-red-500">*</span>
 
                                 <p className="input input-bordered flex items-center gap-2 input-sm my-2 bg-white hover:border-secondary cursor-pointer placeholder:text-gray-500 focus:ring-2 focus:ring-secondary focus:outline-none ">
-                                    <input type="text" className="grow" placeholder="Login kiriting" />
+                                    <input  type="text" className="grow" placeholder="Login kiriting" />
                                 </p>
                             </div>
 
